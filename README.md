@@ -65,6 +65,8 @@ root was denied permission.
 I reverted DB_USERNAME & DB_PASSWORD but left DB_DATABASE=blog
 
 
+Podcast 05: Pass Data to Your Views 
+
 
 
 
