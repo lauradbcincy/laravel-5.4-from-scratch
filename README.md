@@ -18,3 +18,20 @@ Add the following to after.sh
   sudo apt-get update 
   sudo apt-get install silversearcher-ag
 
+Create a .gitignore file with 
+  .vagrant
+  **/vendor
+
+$ vagrant up
+$ vagrant ssh
+
+Podcast 1
+
+
+$ cd code
+$ laravel new blog
+(I did not go back and add the dev branch)
+
+** Running "laravel new blog" created a "blog" folder under "code" (~/vagrant/laravel-5.4-from-scratch/code/blog).  I adjusted the Homestead.yaml so the sites "to" is /home/vagrant/code/blog/public, then I dropped out of vagrant's ssh and ran
+$ vagrant reload --provision
+
