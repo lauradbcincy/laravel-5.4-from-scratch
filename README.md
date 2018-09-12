@@ -84,13 +84,15 @@ Episode 6: Working With the Query Builder
 
 Episode 7: Eloquent 101 
 
+
 Episode 8: Controllers
+
 
 Episode 9: Route Model Binding
 
 
+Episode 10: Layouts and Structure
 
 
 
 
-Podcast 08: Controllers
