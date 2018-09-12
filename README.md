@@ -82,3 +82,5 @@ $ php artisan migrate
 (Installed the JSON Formatter extension in Chrome.  It is really nice.)
 
 
+Podcast 07: Eloquent 101 
+
