@@ -12,7 +12,7 @@ folders:
 sites:
     -
         map: homestead.test
-        to: /home/vagrant/code/public
+        to: /home/vagrant/code/blog/public
 databases:
     - homestead
 name: laravel-5-4-from-scratch
