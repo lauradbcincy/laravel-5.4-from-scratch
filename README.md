@@ -70,3 +70,15 @@ Podcast 05: Pass Data to Your Views
 Edit files specified in podcast
 
 
+
+Podcast 06: Working With the Query Builder 
+
+$ php artisan make:migration create_tasks_table
+$ rm database/migrations/2018_08_30_205405_create_tasks_table.php
+$ php artisan make:migration create_tasks_table --create=tasks
+** No error, unlike the podcast
+$ php artisan migrate
+
+(Installed the JSON Formatter extension in Chrome.  It is really nice.)
+
+
