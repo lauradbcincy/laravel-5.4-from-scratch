@@ -51,6 +51,20 @@ Podcast 3: Laravel Valet is Your Best Friend
 Pretty much skipped this because I like vagrant
 
 
+Podcast 4: Database Setup and Sequel Pro 
+
+Edit .env
+
+$ mysql -u root
+
+mysql> create database blog;
+
+$ php artisan migrate
+***ERROR
+root was denied permission.
+I reverted DB_USERNAME & DB_PASSWORD but left DB_DATABASE=blog
 
 
-    
+
+
+
