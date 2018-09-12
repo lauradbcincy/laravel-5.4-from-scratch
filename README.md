@@ -84,3 +84,4 @@ $ php artisan migrate
 
 Podcast 07: Eloquent 101 
 
+Podcast 08: Controllers
