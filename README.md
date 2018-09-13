@@ -102,3 +102,6 @@ Episode 11: Form Request Data and CSRF
   
     I added the debug bar during this episode.
 
+Episode 12: Form Validation 101
+
+
