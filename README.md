@@ -107,3 +107,10 @@ Episode 12: Form Validation 101
 
 
 Episode 13: Rendering Posts
+
+
+Episode 14: Laravel Mix and the Front-end
+
+  Covers node & npm and compiling SASS files.
+
+  Take away: run "npm run dev" to compile sass.  See also other commands in the package.json file's "scripts" section (like "npm run watch" and "npm run watch-poll")
