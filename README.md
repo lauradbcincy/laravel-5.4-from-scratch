@@ -94,5 +94,11 @@ Episode 9: Route Model Binding
 Episode 10: Layouts and Structure
 
 
+Episode 11: Form Request Data and CSRF
 
+  The link to the Blog example is: https://v4-alpha.getbootstrap.com/examples/blog/
+
+  Styling on the submit button is off.  Apparently there's an issue with the Bootstrap css but it doesn't matter at this point.
+  
+    I added the debug bar during this episode.
 
