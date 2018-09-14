@@ -114,3 +114,6 @@ Episode 14: Laravel Mix and the Front-end
   Covers node & npm and compiling SASS files.
 
   Take away: run "npm run dev" to compile sass.  See also other commands in the package.json file's "scripts" section (like "npm run watch" and "npm run watch-poll")
+
+
+Episode 15: Eloquent Relationships and Comments
