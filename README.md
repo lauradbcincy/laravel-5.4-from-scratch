@@ -117,3 +117,5 @@ Episode 14: Laravel Mix and the Front-end
 
 
 Episode 15: Eloquent Relationships and Comments
+
+Episode 16: Add Comments
