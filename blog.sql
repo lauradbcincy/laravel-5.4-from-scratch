@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.23-0ubuntu0.18.04.1)
 # Database: blog
-# Generation Time: 2018-09-14 19:22:20 +0000
+# Generation Time: 2018-09-17 11:46:19 +0000
 # ************************************************************
 
 
@@ -27,6 +27,7 @@ DROP TABLE IF EXISTS `comments`;
 
 CREATE TABLE `comments` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -34,22 +35,6 @@ CREATE TABLE `comments` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-LOCK TABLES `comments` WRITE;
-/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-
-INSERT INTO `comments` (`id`, `post_id`, `body`, `created_at`, `updated_at`)
-VALUES
-	(1,6,'Great post','2018-09-14 14:41:50','2018-09-14 14:41:50'),
-	(2,6,'Agree','2018-09-14 14:42:09','2018-09-14 14:42:09'),
-	(3,6,'foog foo foo','2018-09-14 18:38:06','2018-09-14 18:38:06'),
-	(4,6,'asdfasdf','2018-09-14 18:38:49','2018-09-14 18:38:49'),
-	(5,6,'asdf','2018-09-14 18:40:03','2018-09-14 18:40:03'),
-	(6,4,'ewrt','2018-09-14 18:49:24','2018-09-14 18:49:24'),
-	(7,4,'adffgh','2018-09-14 19:02:34','2018-09-14 19:02:34'),
-	(8,4,'rtyty','2018-09-14 19:05:04','2018-09-14 19:05:04');
-
-/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table migrations
@@ -69,11 +54,11 @@ LOCK TABLES `migrations` WRITE;
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`)
 VALUES
-	(7,'2014_10_12_000000_create_users_table',1),
-	(8,'2014_10_12_100000_create_password_resets_table',1),
-	(9,'2018_09_12_145121_create_tasks_table',1),
-	(10,'2018_09_12_174549_create_posts_table',2),
-	(11,'2018_09_14_143439_create_comments_table',3);
+	(12,'2014_10_12_000000_create_users_table',1),
+	(13,'2014_10_12_100000_create_password_resets_table',1),
+	(14,'2018_09_12_145121_create_tasks_table',1),
+	(15,'2018_09_12_174549_create_posts_table',1),
+	(16,'2018_09_14_143439_create_comments_table',1);
 
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -100,6 +85,7 @@ DROP TABLE IF EXISTS `posts`;
 
 CREATE TABLE `posts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -107,20 +93,6 @@ CREATE TABLE `posts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-LOCK TABLES `posts` WRITE;
-/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-
-INSERT INTO `posts` (`id`, `title`, `body`, `created_at`, `updated_at`)
-VALUES
-	(1,'My title','post body','2018-09-13 16:24:07','2018-09-13 16:24:07'),
-	(2,'My next title','body','2018-09-13 16:33:12','2018-09-13 16:33:12'),
-	(3,'Third title','body','2018-09-13 16:34:40','2018-09-13 16:34:40'),
-	(4,'a','b','2018-09-13 16:37:48','2018-09-13 16:37:48'),
-	(5,'x','y','2018-09-13 16:40:49','2018-09-13 16:40:49'),
-	(6,'Another post','with some boyd','2018-09-13 20:06:15','2018-09-13 20:06:15');
-
-/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table tasks
@@ -137,17 +109,6 @@ CREATE TABLE `tasks` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-LOCK TABLES `tasks` WRITE;
-/*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
-
-INSERT INTO `tasks` (`id`, `body`, `completed`, `created_at`, `updated_at`)
-VALUES
-	(1,'Go to the market',1,'2018-09-12 14:57:07','2018-09-12 14:57:07'),
-	(2,'Finish screencast',0,'2018-09-12 14:58:22','2018-09-12 14:58:22'),
-	(3,'Learn Laravel',1,'2018-09-12 14:59:46','2018-09-12 14:59:46');
-
-/*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table users
