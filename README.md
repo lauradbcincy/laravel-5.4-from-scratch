@@ -130,3 +130,14 @@ Episode 18: Associating With Users
 
   Switching back to the blog site because he's using MySQL
   $user->password = bycrypt('whatever')
+
+
+Episode 19: Associating With Users: Part 2
+
+  There are some problems with the code in the podcast.  The comments reflect this issue, so it's not all me.
+
+  The first problem is he never calls bcrypt for the password.
+
+  The second issue was the redirects to "/home".  There's a way to change the default redirect in the authenticator (see "Path Customization" at https://laravel.com/docs/5.7/authentication#included-authenticating) For this use case, I just did "Route::redirect('/home', '/');" in web.php
+
+  

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -10,16 +11,16 @@
     <title>Blog</title>
 
     <link href="/css/app.css" rel="stylesheet">
-  </head>
+    <link href="/css/blog.css" rel="stylesheet">
+</head>
 
-  <body>
+<body>
 
+    @include('layouts.nav')
 
-        @include('layouts.nav')
+    <div class="container">
 
-        <div class="container">
-
-          <div class="row">
+        <div class="row">
 
             <div class="col-sm-8 blog-main">
 
@@ -29,11 +30,12 @@
 
             @include('layouts.sidebar.master')
 
-          </div><!-- /.row -->
+        </div><!-- /.row -->
 
-        </div><!-- /.container -->
+    </div><!-- /.container -->
 
-        @include('layouts.footer')
+    @include('layouts.footer')
 
-  </body>
+</body>
+
 </html>
