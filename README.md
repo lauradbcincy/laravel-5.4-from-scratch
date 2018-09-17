@@ -122,6 +122,6 @@ Episode 15: Eloquent Relationships and Comments
 Episode 16: Add Comments
 
 
-Episode 16: Rapid Authentication and Configuration
+Episode 17: Rapid Authentication and Configuration
 
   So that I use the example site, I ran "laravel new example" in the vagrant ~/code directory, then on the host machine edited Homstead.yaml and /etc/hosts then ran "vagrant reload --provision"
