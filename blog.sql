@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.23-0ubuntu0.18.04.1)
 # Database: blog
-# Generation Time: 2018-09-17 11:46:19 +0000
+# Generation Time: 2018-09-17 20:09:20 +0000
 # ************************************************************
 
 
@@ -93,6 +93,18 @@ CREATE TABLE `posts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+LOCK TABLES `posts` WRITE;
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+
+INSERT INTO `posts` (`id`, `user_id`, `title`, `body`, `created_at`, `updated_at`)
+VALUES
+	(1,6,'my post','post text','2018-09-17 15:40:15','2018-09-17 15:40:15'),
+	(2,6,'second post','some more','2018-09-17 15:41:03','2018-09-17 15:41:03'),
+	(3,10,'asdf','asdf','2018-09-17 19:48:09','2018-09-17 19:48:09'),
+	(4,11,'The Test Post','ipsum stuff','2018-09-17 20:03:37','2018-09-17 20:03:37');
+
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table tasks
@@ -128,6 +140,23 @@ CREATE TABLE `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`)
+VALUES
+	(1,'John Doe','johndoe@example.com','mypass',NULL,'2018-09-17 14:30:03','2018-09-17 14:30:03'),
+	(3,'Jane Doe','jdoe@example.com','mypass','FfXLbm21RfeihMWkpPF5wNbrZl0JaDfYM3mDtHTzeB5obTzbpruyCBpGmfBn','2018-09-17 14:33:31','2018-09-17 14:33:31'),
+	(5,'Jane Doe','janedoe@example.com','mypass','1gtCb6gDpNwyuOTvaUhFxMTrFtK1wL76VIolF14iC2LnSXxhp3mimpmiQymc','2018-09-17 14:48:11','2018-09-17 14:48:11'),
+	(6,'Test Client','me@myserver.com','mypass',NULL,'2018-09-17 15:25:53','2018-09-17 15:25:53'),
+	(7,'Suzy Que','sque@example.com','mypass',NULL,'2018-09-17 16:42:50','2018-09-17 16:42:50'),
+	(8,'Suzy Que2','sque2@example.com','mypass',NULL,'2018-09-17 16:47:16','2018-09-17 16:47:16'),
+	(9,'Test 01','test01@example.com','$2y$10$M2dM8CTU9wLPm8iwbedAneqIoPRlUx3eF5lEGaIuSHcwf2bbBb6e2','Z1sO17HrLr5rIZKRh5C5TichafgN4UtMifmYcnWFrjDHYWvV7qSknZkWlsAT','2018-09-17 18:27:36','2018-09-17 18:27:36'),
+	(10,'Test 02','test02@example.com','$2y$10$OFCBsjro6KROm2yuXAy07ehwnvkC75NtA8NvMQk31osNApmiQvnKG','YQhsdn8oSlNdiehL5mGYuA4453CjmDFeLVtJIBPsBNiXzM5BEFFGfEC3KCdD','2018-09-17 19:04:27','2018-09-17 19:04:27'),
+	(11,'Test 03','test03@example.com','$2y$10$GGXg4xxQT0n0fJgZVmxq3.hANi343akP70kKBrONQc0n/O4DHnIbS',NULL,'2018-09-17 20:02:04','2018-09-17 20:02:04');
+
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 
