@@ -149,3 +149,6 @@ Episode 20: Archives
 Episode 21: View Composers
 
   I split my sidebar layouts up more than the example, so the view composer is listening for 'layouts.sidebar.archives'
+
+
+Episode 22: Testing 101
