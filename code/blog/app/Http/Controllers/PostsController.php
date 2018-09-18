@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-use App\Post;
+use \App\Post;
 
 class PostsController extends Controller
 {
@@ -20,16 +20,7 @@ class PostsController extends Controller
         ->filter(request(['month', 'year']))
         ->get();
 
-        $archives = Post::selectRaw('
-          year(created_at) year,
-          monthname(created_at) month,
-          count(*) published')
-          ->groupBy('year', 'month')
-          ->orderByRaw('min(created_at) DESC')
-          ->get()
-          ->toArray();
-
-        return view('posts.index', compact('posts', 'archives'));
+        return view('posts.index', compact('posts'));
     }
 
     public function show(Post $post)
@@ -52,7 +43,6 @@ class PostsController extends Controller
         auth()->user()->publish(
             new Post(request(['title', 'body']))
         );
-
 
         return redirect('/');
     }

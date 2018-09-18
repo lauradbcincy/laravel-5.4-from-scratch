@@ -144,3 +144,8 @@ Episode 19: Associating With Users: Part 2
 Episode 20: Archives
 
   I did have to use isset() in the filter at the end of the podcast so there is deviance from his code.
+
+
+Episode 21: View Composers
+
+  I split my sidebar layouts up more than the example, so the view composer is listening for 'layouts.sidebar.archives'
