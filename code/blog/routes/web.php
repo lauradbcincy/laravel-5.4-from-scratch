@@ -1,5 +1,9 @@
 <?php
 
+// resolve() and also app() are aliases for App::make
+//dd(resolve('App\Billing\Stripe'));
+
+
 Route::get('/', 'PostsController@index')->name('home');
 
 Route::redirect('/home', '/');
