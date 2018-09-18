@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.23-0ubuntu0.18.04.1)
 # Database: blog
-# Generation Time: 2018-09-17 20:09:20 +0000
+# Generation Time: 2018-09-18 14:46:37 +0000
 # ************************************************************
 
 
@@ -99,9 +99,9 @@ LOCK TABLES `posts` WRITE;
 INSERT INTO `posts` (`id`, `user_id`, `title`, `body`, `created_at`, `updated_at`)
 VALUES
 	(1,6,'my post','post text','2018-09-17 15:40:15','2018-09-17 15:40:15'),
-	(2,6,'second post','some more','2018-09-17 15:41:03','2018-09-17 15:41:03'),
+	(2,6,'second post','some more','2018-08-17 15:41:03','2018-09-17 15:41:03'),
 	(3,10,'asdf','asdf','2018-09-17 19:48:09','2018-09-17 19:48:09'),
-	(4,11,'The Test Post','ipsum stuff','2018-09-17 20:03:37','2018-09-17 20:03:37');
+	(4,11,'The Test Post','ipsum stuff','2017-10-18 20:03:37','2018-09-17 20:03:37');
 
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;

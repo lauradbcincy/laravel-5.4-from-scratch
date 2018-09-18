@@ -140,4 +140,7 @@ Episode 19: Associating With Users: Part 2
 
   The second issue was the redirects to "/home".  There's a way to change the default redirect in the authenticator (see "Path Customization" at https://laravel.com/docs/5.7/authentication#included-authenticating) For this use case, I just did "Route::redirect('/home', '/');" in web.php
 
-  
+
+Episode 20: Archives
+
+  I did have to use isset() in the filter at the end of the podcast so there is deviance from his code.
