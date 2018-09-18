@@ -152,3 +152,9 @@ Episode 21: View Composers
 
 
 Episode 22: Testing 101
+
+
+Episode 23: DI, Auto-Resolution, and Repositories
+
+
+Episode 24: The Service Container
