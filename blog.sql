@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.23-0ubuntu0.18.04.1)
 # Database: blog
-# Generation Time: 2018-09-18 14:46:37 +0000
+# Generation Time: 2018-09-20 21:57:57 +0000
 # ************************************************************
 
 
@@ -58,7 +58,8 @@ VALUES
 	(13,'2014_10_12_100000_create_password_resets_table',1),
 	(14,'2018_09_12_145121_create_tasks_table',1),
 	(15,'2018_09_12_174549_create_posts_table',1),
-	(16,'2018_09_14_143439_create_comments_table',1);
+	(16,'2018_09_14_143439_create_comments_table',1),
+	(17,'2018_09_20_213318_create_tags_table',2);
 
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -74,6 +75,19 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+# Dump of table post_tag
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `post_tag`;
+
+CREATE TABLE `post_tag` (
+  `post_id` int(11) NOT NULL,
+  `tag_id` int(11) NOT NULL,
+  PRIMARY KEY (`post_id`,`tag_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
@@ -101,9 +115,36 @@ VALUES
 	(1,6,'my post','post text','2018-09-17 15:40:15','2018-09-17 15:40:15'),
 	(2,6,'second post','some more','2018-08-17 15:41:03','2018-09-17 15:41:03'),
 	(3,10,'asdf','asdf','2018-09-17 19:48:09','2018-09-17 19:48:09'),
-	(4,11,'The Test Post','ipsum stuff','2017-10-18 20:03:37','2018-09-17 20:03:37');
+	(4,11,'The Test Post','ipsum stuff','2017-10-18 20:03:37','2018-09-17 20:03:37'),
+	(5,24,'foo','bar','2018-09-20 18:16:45','2018-09-20 18:16:45');
 
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table tags
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `tags`;
+
+CREATE TABLE `tags` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `tags_name_unique` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+LOCK TABLES `tags` WRITE;
+/*!40000 ALTER TABLE `tags` DISABLE KEYS */;
+
+INSERT INTO `tags` (`id`, `name`, `created_at`, `updated_at`)
+VALUES
+	(1,'Personal','2018-09-20 21:39:25','2018-09-20 21:39:25'),
+	(2,'PHP','2018-09-20 21:39:35','2018-09-20 21:39:35');
+
+/*!40000 ALTER TABLE `tags` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -153,7 +194,16 @@ VALUES
 	(8,'Suzy Que2','sque2@example.com','mypass',NULL,'2018-09-17 16:47:16','2018-09-17 16:47:16'),
 	(9,'Test 01','test01@example.com','$2y$10$M2dM8CTU9wLPm8iwbedAneqIoPRlUx3eF5lEGaIuSHcwf2bbBb6e2','Z1sO17HrLr5rIZKRh5C5TichafgN4UtMifmYcnWFrjDHYWvV7qSknZkWlsAT','2018-09-17 18:27:36','2018-09-17 18:27:36'),
 	(10,'Test 02','test02@example.com','$2y$10$OFCBsjro6KROm2yuXAy07ehwnvkC75NtA8NvMQk31osNApmiQvnKG','YQhsdn8oSlNdiehL5mGYuA4453CjmDFeLVtJIBPsBNiXzM5BEFFGfEC3KCdD','2018-09-17 19:04:27','2018-09-17 19:04:27'),
-	(11,'Test 03','test03@example.com','$2y$10$GGXg4xxQT0n0fJgZVmxq3.hANi343akP70kKBrONQc0n/O4DHnIbS',NULL,'2018-09-17 20:02:04','2018-09-17 20:02:04');
+	(11,'Test 03','test03@example.com','$2y$10$GGXg4xxQT0n0fJgZVmxq3.hANi343akP70kKBrONQc0n/O4DHnIbS',NULL,'2018-09-17 20:02:04','2018-09-17 20:02:04'),
+	(12,'Test 04','test04@example.com','$2y$10$4o0iec2zSEji3lRZXqfY2OhrMe1xMAOfIqMxTimV9cyWT8khfUoo.','ku93wp8HBPxa5QBANX3NOOnO3D8o90fteztyeOy3FblbybRPLBU4ixB0J2RE','2018-09-18 21:06:45','2018-09-18 21:06:45'),
+	(13,'Test 05','test05@example.com','$2y$10$FeRhpYz5FIvS7sXm9s/KnOpLMSqXupQeGoFwIWrxCwNoRPP5c/6ju',NULL,'2018-09-18 21:15:40','2018-09-18 21:15:40'),
+	(15,'Test 06','test06@example.com','$2y$10$QprkKvAV9bI.1pzKq7SqOuEYYvdhBNq/I.CgftKkKeFntZtPc6/gy',NULL,'2018-09-18 21:23:36','2018-09-18 21:23:36'),
+	(17,'adf','johndoe1@example.com','$2y$10$WTyeUftcol1i69TesVqWsOadrvonpW10UEj6j3Vx45BhFgFe8k8Rq','kDFDhz5yLgT97kyUONkeZ7z9iVQMr0tdb7CYwafurPmgczkeNH6DTxujKcaq','2018-09-20 15:46:48','2018-09-20 15:46:48'),
+	(18,'Test 07','test07@example.com','mypass',NULL,'2018-09-20 16:12:33','2018-09-20 16:12:33'),
+	(19,'Test 08','test08@example.com','mypass',NULL,'2018-09-20 17:41:53','2018-09-20 17:41:53'),
+	(21,'Test 09','test09@example.com','mypass','Ue4eHTjrxA1UcV2pYlvjkfEubEPU8pgz4Cy0zKy1DPfnEf1FNUxJJWNUD0lr','2018-09-20 17:43:21','2018-09-20 17:43:21'),
+	(22,'Test 10','test10@example.com','mypass',NULL,'2018-09-20 17:53:18','2018-09-20 17:53:18'),
+	(24,'Test 11','test11@example.com','mypass','aZPoe83uyn3A3kOJ1jFYawzlYj28Keu2LsNOupRuij6CPEdm2M9Bp8hocv4e','2018-09-20 17:57:34','2018-09-20 17:57:34');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
