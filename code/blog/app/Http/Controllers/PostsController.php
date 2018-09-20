@@ -29,11 +29,14 @@ class PostsController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+      session()->flash('message' , 'Your Post has been published');
+
+      return view('posts.create');
     }
 
     public function store()
     {
+      
         $this->validate(request(), [
             'title' => 'required',
             'body'  => 'required'
