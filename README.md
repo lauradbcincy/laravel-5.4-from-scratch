@@ -177,3 +177,6 @@ Episode 28: Form Requests and Form Objects
 Episode 29: Session Handling and Flash Messaging
 
   There are some authentication errors in this code but they aren't part of this episode so I'm not going to track them down.
+
+
+Episode 30: Tags and Pivot Tables
