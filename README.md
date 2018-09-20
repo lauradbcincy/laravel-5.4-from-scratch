@@ -164,3 +164,9 @@ Episode 25: Service Providers Explained
 
 
 Episode 26: Sending Email
+
+
+Episode 27: Markdown Mail
+
+  Possibly the coolest part of Laravel so far is the email markdown and email test facilities
+  >>> Mail::to($user = App\User::first())->send(new App\Mail\WelcomeAgain($user));
