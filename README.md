@@ -183,3 +183,9 @@ Episode 30: Tags and Pivot Tables
 
 
 Episode 31: Sorting Posts By Tags
+
+
+Episode 32: Eventing
+
+    Last episode in the series
+    
