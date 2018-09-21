@@ -4,5 +4,7 @@
 
   @include('layouts.sidebar.archives')
 
+  @include('layouts.sidebar.tags')
+
   @include('layouts.sidebar.elsewhere')
 </div><!-- /.blog-sidebar -->

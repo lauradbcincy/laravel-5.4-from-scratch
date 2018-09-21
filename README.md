@@ -180,3 +180,6 @@ Episode 29: Session Handling and Flash Messaging
 
 
 Episode 30: Tags and Pivot Tables
+
+
+Episode 31: Sorting Posts By Tags
